@@ -24,6 +24,12 @@
       {% endif %}
     </div>
   </div>
+  {% empty %}
+  <div class="row">
+    <h2 class="text-center">There No News Items</h2>
+  </div>
+  {% endfor %}
+
 
   <!-- Newsletter form -->
   <div class="container-fluid">
@@ -34,13 +40,6 @@
       <input type="submit" value="Subscribe">
     </form>
   </div>
-
-
-  {% empty %}
-  <div class="row">
-    <h2 class="text-center">There No News Items</h2>
-  </div>
-  {% endfor %}
 
 </div>
 {% endblock %}

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect 
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 import datetime as dt
-from .models import Article 
+from .models import Article, NewsLetterRecipients 
 from .forms import NewsLetterForm 
 from .email import send_welcome_email  
 
@@ -9,7 +9,7 @@ from .email import send_welcome_email
 # View Function to present news from today  
 def news_today(request):
     date = dt.date.today()
-    news = Article.todays_news()
+    news = Article.todays_news() 
     
     if request.method == 'POST':
         form = NewsLetterForm(request.POST)
