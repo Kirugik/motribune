@@ -1,4 +1,4 @@
-{%extends 'all-news/base.html'%} 
+{%extends 'all-news/base.html'%}
 {% block content %}
 <div class="container">
 
@@ -15,8 +15,8 @@
     {% for article in articles %}
       <div class="col-sm-6 col-md-3">
           <h1>{{article.title}}</h1>
-          <p>{{article.post}}</p>  
-          <p class="text-muted"><small>Posted on {{article.pub_date}} by {{article.editor}}</small></p>  
+          <p>{{article.post}}</p>
+          <p class="text-muted"><small>Posted on {{article.pub_date}} by {{article.editor}}</small></p>
       </div>
     {% endfor %}
   {% endif %}

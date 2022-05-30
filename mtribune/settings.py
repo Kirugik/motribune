@@ -14,7 +14,8 @@ from pathlib import Path
 import os 
 import django_heroku
 import dj_database_url
-from decouple import config,Csv 
+from decouple import config,Csv
+from decouple import config  
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -113,14 +114,14 @@ WSGI_APPLICATION = 'mtribune.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#         'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'mtribune',
-#         'USER': 'robert',
-#     'PASSWORD':'Kirugik"79',
-#     }
-# }
+DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mtribune',
+        'USER': 'robert',
+    'PASSWORD':'Kirugik@79',
+    }
+}
 
 
 # Password validation
@@ -182,6 +183,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# Email configurations remember to install python-decouple
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+
 
 django_heroku.settings(locals())  
 

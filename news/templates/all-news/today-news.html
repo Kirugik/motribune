@@ -1,4 +1,6 @@
 {%extends 'all-news/base.html'%}
+{% load bootstrap3 %} 
+
 {% block content %} 
 {{ block.super}}
 
@@ -22,6 +24,17 @@
       {% endif %}
     </div>
   </div>
+
+  <!-- Newsletter form -->
+  <div class="container-fluid">
+    <form  action="{%url 'newsToday'%}" method="post">
+      {%csrf_token%}
+  
+      {% bootstrap_form letterForm layout='inline' %}
+      <input type="submit" value="Subscribe">
+    </form>
+  </div>
+
 
   {% empty %}
   <div class="row">
